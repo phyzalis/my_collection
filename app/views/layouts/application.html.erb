@@ -13,11 +13,25 @@
   </head>
 
   <body>
-    <%= link_to "My Collection", root_path %>
-    <%= link_to "Platforms", platforms_path %>
-    <%= link_to "Games", games_path %>
-
-    <%= yield %>
-
+    <div class="page-wrap">
+      <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+          <li class="name">
+            <h1><%= link_to "My Collection", root_path %></h1>
+          </li>
+          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+          <ul>
+            <li><%= link_to "Platforms", platforms_path %></li>
+            <li><%= link_to "Games", games_path %></li>
+          </ul>
+        </section>
+      </nav>
+      <section role="main" class="scroll-container">
+        <%= yield %>
+      </section>
+    </div>
   </body>
 </html>
